@@ -29,13 +29,13 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /*!
- * \file english.h
+ * \file greek.h
  * 
- * \brief New English word list and map.
+ * \brief Greek word list and map.
  */
 
-#ifndef ENGLISH_H
-#define ENGLISH_H
+#ifndef GREEK_H
+#define GREEK_H
 
 #include <vector>
 #include <unordered_map>
@@ -48,10 +48,10 @@
  */
 namespace Language
 {
-  class English: public Base
+  class Greek: public Base
   {
   public:
-    English()
+    Greek()
     {
       word_list = new std::vector<std::string>({
         "abbey",
@@ -1684,7 +1684,7 @@ namespace Language
       unique_prefix_length = 3;
       word_map = new std::unordered_map<std::string, uint32_t>;
       trimmed_word_map = new std::unordered_map<std::string, uint32_t>;
-      language_name = "English";
+      language_name = "Greek";
       populate_maps();
     }
   };
