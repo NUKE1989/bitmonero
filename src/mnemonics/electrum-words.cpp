@@ -58,6 +58,7 @@
 #include "old_english.h"
 #include "language_base.h"
 #include "singleton.h"
+#include "greek.h"
 
 namespace
 {
@@ -80,6 +81,7 @@ namespace
       Language::Singleton<Language::Spanish>::instance(),
       Language::Singleton<Language::Portuguese>::instance(),
       Language::Singleton<Language::Japanese>::instance(),
+      Language::Singleton<Language::Greek>::instance(),
       Language::Singleton<Language::OldEnglish>::instance()
     });
 
@@ -293,6 +295,10 @@ namespace crypto
       {
         language = Language::Singleton<Language::Japanese>::instance();
       }
+      else if (language_name == "Greek")
+      {
+        language = Language::Singleton<Language::Greek>::instance();
+      }
       else
       {
         return false;
@@ -341,7 +347,8 @@ namespace crypto
         Language::Singleton<Language::English>::instance(),
         Language::Singleton<Language::Spanish>::instance(),
         Language::Singleton<Language::Portuguese>::instance(),
-        Language::Singleton<Language::Japanese>::instance()
+        Language::Singleton<Language::Japanese>::instance(),
+        Language::Singleton<Language::Greek>::instance()
       });
       for (std::vector<Language::Base*>::iterator it = language_instances.begin();
         it != language_instances.end(); it++)
